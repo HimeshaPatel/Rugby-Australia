@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 400 240">
+  <rect width="400" height="240" fill="#173C2B"/>
+  <ellipse cx="200" cy="120"
+           rx="105" ry="55"
+           fill="#FFFFFF"
+           transform="rotate(-25 200 120)"/>
+  <ellipse cx="200" cy="120"
+           rx="105" ry="20"
+           fill="none"
+           stroke="#D4A246"
+           stroke-width="8"
+           transform="rotate(-25 200 120)"/>
+</svg>
