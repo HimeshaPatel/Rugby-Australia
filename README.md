@@ -38,14 +38,16 @@ npm run dev
 
 The seed creates Wallabies and Wallaroos, each with its own theme and initial page content. It also creates unique indexes for site slugs and site/path pairs. Running the seed again inserts missing documents without overwriting existing edits.
 
+
 | Route | Purpose |
 | --- | --- |
-| `/manager` | Create and edit pages |
-| `/sites/wallabies` | Wallabies homepage |
-| `/sites/wallaroos` | Wallaroos homepage |
-| `/` | Redirects to the Wallabies homepage |
+| [Manager](http://localhost:3000/manager) | Create and edit pages |
+| [Wallabies](http://localhost:3000/sites/wallabies) | Wallabies homepage |
+| [Wallaroos](http://localhost:3000/sites/wallaroos) | Wallaroos homepage |
+| [Home](http://localhost:3000/) | Redirects to the Wallabies homepage |
 
-Open these routes at `http://localhost:3000`.
+These URLs are available after starting the local application with `npm run dev`.
+
 
 The manager includes a component tree with titles and counts, a property inspector, a Save Page action and a View Live Page link for saved pages.
 
