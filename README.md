@@ -2,6 +2,17 @@
 
 A small Next.js application for managing multiple sports websites from a shared component library. Editors create pages, add and edit nested components, and save their content to MongoDB. Public pages render the same portable JSON using the theme of the requested site.
 
+## 🚀 Live Deployment (Vercel & MongoDB Atlas)
+
+The application is deployed to production on Vercel and connected to a live cloud cluster on MongoDB Atlas, fulfilling the deployment stretch goal:
+
+| Route | Live URL | Purpose |
+| --- | --- | --- |
+| **Manager** | [https://rugby-australia.vercel.app/manager](https://rugby-australia.vercel.app/manager) | Interactive schema-driven page manager |
+| **Wallabies** | [https://rugby-australia.vercel.app/sites/wallabies](https://rugby-australia.vercel.app/sites/wallabies) | Wallabies Gold & Green themed site |
+| **Wallaroos** | [https://rugby-australia.vercel.app/sites/wallaroos](https://rugby-australia.vercel.app/sites/wallaroos) | Wallaroos Forest & Mint themed site |
+| **Home** | [https://rugby-australia.vercel.app/](https://rugby-australia.vercel.app/) | Redirects to the Wallabies homepage |
+
 ## Run locally
 
 Requirements: Node.js 22 (recommended) or a compatible newer LTS version, npm, and Docker running locally (or an existing MongoDB instance).
@@ -244,13 +255,13 @@ Saving replaces the page document. Unsaved changes are discarded when switching 
 
 Card array items use index keys; stable IDs would be preferable for reordering.
 
-### Scope
+### Scope and Stretch Goals
 
 The manager currently loads all saved pages. At larger scale, I would query by selected site, paginate the page list, and load individual pages on demand.
 
-Authentication, permissions, deployment, reordering, live preview and draft/publish are outside this assessment implementation.
+The project fulfills the primary stretch goal: **Deploy to Vercel with the manager and both sites at public URLs** (`https://rugby-australia.vercel.app/`), backed by a cloud-hosted MongoDB Atlas cluster.
 
-The unauthenticated manager should not be exposed as a production administration service.
+Authentication, permissions, live preview iframe, reordering and a formal draft/publish workflow remain outside this assessment implementation. In a production rollout, the manager would be protected behind corporate SSO / authentication.
 
 ## Verification
 
