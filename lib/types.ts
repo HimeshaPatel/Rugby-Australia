@@ -1,4 +1,3 @@
-
 export type Theme = {
   brand: string;
   light: string;
@@ -7,7 +6,7 @@ export type Theme = {
 };
 
 export type SectionProps = {
-  layout: "full" | "two-column";
+  layout: "full" | "two-column" | "three-column";
   background: "none" | "light" | "brand";
 };
 
@@ -25,12 +24,23 @@ export type Card = {
 
 export type CardGridProps = {
   title: string;
+  subtitle?: string;
   cards: Card[];
+  footerLink?: {
+    label: string;
+    href: string;
+  };
+};
+
+export type HeroProps = {
+  heading: string;
+  description: string;
 };
 
 export type PropsByType = {
   Section: SectionProps;
   CardGrid: CardGridProps;
+  Hero: HeroProps;
 };
 
 export type ComponentType = keyof PropsByType;

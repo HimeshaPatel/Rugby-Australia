@@ -1,4 +1,3 @@
-
 import type { ReactNode } from "react";
 import type {
   ComponentType,
@@ -8,6 +7,7 @@ import type {
 
 import { Section } from "@/components/blocks/Section";
 import { CardGrid } from "@/components/blocks/CardGrid";
+import { Hero } from "@/components/blocks/Hero";
 
 type Registry = {
   [K in ComponentType]: (
@@ -27,5 +27,9 @@ export const registry: Registry = {
 
   CardGrid: (props, _children, id, theme) => (
     <CardGrid key={id} {...props} theme={theme} />
+  ),
+
+  Hero: (props, _children, id, theme) => (
+    <Hero key={id} {...props} theme={theme} />
   )
 };
