@@ -1,3 +1,4 @@
+
 export type Theme = {
   brand: string;
   light: string;
@@ -6,7 +7,7 @@ export type Theme = {
 };
 
 export type SectionProps = {
-  layout: "full" | "two-column" | "three-column";
+  layout: "full" | "two-column";
   background: "none" | "light" | "brand";
 };
 
@@ -24,12 +25,7 @@ export type Card = {
 
 export type CardGridProps = {
   title: string;
-  subtitle?: string;
   cards: Card[];
-  footerLink?: {
-    label: string;
-    href: string;
-  };
 };
 
 export type PropsByType = {

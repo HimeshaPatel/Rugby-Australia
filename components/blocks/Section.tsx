@@ -42,11 +42,9 @@ export function Section({
     >
       <div
         className={`grid gap-6 ${
-          layout === "three-column"
-            ? "grid-cols-1 md:grid-cols-3 items-start"
-            : layout === "two-column"
-              ? "grid-cols-1 md:grid-cols-2 items-start"
-              : "grid-cols-1"
+          layout === "two-column"
+            ? "grid-cols-1 md:grid-cols-2 items-start"
+            : "grid-cols-1"
         }`}
       >
         {children}

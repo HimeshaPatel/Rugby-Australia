@@ -7,17 +7,12 @@ type Props = CardGridProps & {
   theme: Theme;
 };
 
-export function CardGrid({ title, subtitle, cards, footerLink, theme }: Props) {
-  const hasCards = cards && cards.length > 0;
+export function CardGrid({ title, cards, theme }: Props) {
+  const hasCards = cards.length > 0;
 
   return (
     <div className="w-full">
       {title && <Heading title={title} />}
-      {subtitle && (
-        <p className="text-sm sm:text-base opacity-80 -mt-3 mb-5 leading-relaxed">
-          {subtitle}
-        </p>
-      )}
 
       {hasCards ? (
         <div
@@ -71,16 +66,6 @@ export function CardGrid({ title, subtitle, cards, footerLink, theme }: Props) {
         <p className="text-xs italic text-current opacity-60 my-1">
           No cards available in this section.
         </p>
-      )}
-
-      {footerLink && footerLink.label && (
-        <div className="mt-6 flex justify-start">
-          <Button
-            label={footerLink.label}
-            href={footerLink.href}
-            theme={theme}
-          />
-        </div>
       )}
     </div>
   );

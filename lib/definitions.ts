@@ -1,3 +1,4 @@
+
 import type {
     ComponentType,
     PropsByType
@@ -52,7 +53,7 @@ export const definitions: Definitions = {
                 name: "layout",
                 label: "Layout",
                 kind: "select",
-                options: ["full", "two-column", "three-column"]
+                options: ["full", "two-column"]
             },
             {
                 name: "background",
@@ -69,7 +70,6 @@ export const definitions: Definitions = {
 
         defaultProps: {
             title: "Meet the Team",
-            subtitle: "",
             cards: []
         },
 
@@ -77,11 +77,6 @@ export const definitions: Definitions = {
             {
                 name: "title",
                 label: "Title",
-                kind: "text"
-            },
-            {
-                name: "subtitle",
-                label: "Subtitle",
                 kind: "text"
             },
             {
@@ -131,25 +126,6 @@ export const definitions: Definitions = {
                                 kind: "text"
                             }
                         ]
-                    }
-                ]
-            },
-            {
-                name: "footerLink",
-                label: "Footer Link",
-                kind: "object",
-                optional: true,
-
-                fields: [
-                    {
-                        name: "label",
-                        label: "Link Label",
-                        kind: "text"
-                    },
-                    {
-                        name: "href",
-                        label: "Link URL",
-                        kind: "text"
                     }
                 ]
             }

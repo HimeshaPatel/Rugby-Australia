@@ -54,12 +54,10 @@ export function PageTree({
         <ul className="space-y-2">
             {nodes.map(node => {
                 const isSelected = selectedId === node.id;
-                const def = definitions[node.type as keyof typeof definitions];
-                const label = def?.label ?? node.type;
-
+                const def = definitions[node.type];
                 const cardGridTitle =
                     node.type === "CardGrid"
-                        ? (node.props as { title?: string })?.title
+                        ? (node.props as { title?: string }).title
                         : undefined;
 
                 return (
@@ -84,9 +82,9 @@ export function PageTree({
                                 </span>
                                 <div className="truncate text-left min-w-0">
                                     <span className="font-semibold tracking-tight block truncate">
-                                        {label}
+                                        {def.label}
                                     </span>
-                                    {cardGridTitle && (
+                                    {cardGridTitle ? (
                                         <span
                                             className={`text-2xs block truncate font-normal ${
                                                 isSelected ? "text-emerald-200" : "text-slate-500"
@@ -94,7 +92,7 @@ export function PageTree({
                                         >
                                             &ldquo;{cardGridTitle}&rdquo;
                                         </span>
-                                    )}
+                                    ) : null}
                                 </div>
                             </div>
 
@@ -107,7 +105,7 @@ export function PageTree({
                                                 : "bg-slate-100 text-slate-600"
                                         }`}
                                     >
-                                        {(node.props as { layout?: string })?.layout ?? "full"}
+                                        {(node.props as { layout?: string }).layout ?? "full"}
                                     </span>
                                 )}
 
@@ -119,11 +117,11 @@ export function PageTree({
                                                 : "bg-slate-100 text-slate-600"
                                         }`}
                                     >
-                                        {((node.props as { cards?: unknown[] })?.cards ?? []).length} cards
+                                        {((node.props as { cards?: unknown[] }).cards ?? []).length} cards
                                     </span>
                                 )}
 
-                                {node.children && node.children.length > 0 && (
+                                {node.children.length > 0 && (
                                     <span
                                         className={`text-2xs font-medium px-1.5 py-0.5 rounded-full ${
                                             isSelected
@@ -137,7 +135,7 @@ export function PageTree({
                             </div>
                         </button>
 
-                        {node.children && node.children.length > 0 && (
+                        {node.children.length > 0 && (
                             <div className="ml-4 mt-2 border-l-2 border-slate-200 pl-3 space-y-2">
                                 <PageTree
                                     nodes={node.children}
