@@ -154,28 +154,5 @@ export const definitions: Definitions = {
                 ]
             }
         ]
-    },
-
-    Hero: {
-        label: "Hero",
-        acceptsChildren: false,
-
-        defaultProps: {
-            heading: "Welcome to Wallabies Rugby",
-            description: "Explore our team, fixtures and latest news."
-        },
-
-        fields: [
-            {
-                name: "heading",
-                label: "Heading",
-                kind: "text"
-            },
-            {
-                name: "description",
-                label: "Description",
-                kind: "text"
-            }
-        ]
     }
 };

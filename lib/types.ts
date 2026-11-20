@@ -32,15 +32,9 @@ export type CardGridProps = {
   };
 };
 
-export type HeroProps = {
-  heading: string;
-  description: string;
-};
-
 export type PropsByType = {
   Section: SectionProps;
   CardGrid: CardGridProps;
-  Hero: HeroProps;
 };
 
 export type ComponentType = keyof PropsByType;
